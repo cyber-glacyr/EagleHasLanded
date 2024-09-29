@@ -36,13 +36,13 @@ def solar_viable(lat, long):
         # Printing the JSON response
         js = response.json()
         final = json.dumps(js)
-        json_object = json.dumps(final, indent=4)
-        print(json_object)
+        json_object = json.dumps(final, indent=2)
         with open("sample.json", "w") as outfile:
             outfile.write(json_object)
 
         with open("sample.json", mode="r", encoding="utf-8") as read_file:
             solarHours = json.load(read_file)
+        solarHours = json.loads(solarHours)
         print(solarHours["solarPotential"]["maxSunshineHoursPerYear"])
     else:
         print(f"Error: {response.status_code}")
