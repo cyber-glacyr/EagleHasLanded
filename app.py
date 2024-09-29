@@ -18,7 +18,6 @@ def convert_to_cords(address):
     longitude = ''
     api = "<<APIKEY>>"
     url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={api}'
-
     response = requests.get(url)
 
     if response.status_code == 200:
