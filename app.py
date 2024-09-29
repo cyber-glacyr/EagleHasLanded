@@ -20,7 +20,7 @@ def convert_to_cords(address):
     url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={api}'
 
     response = requests.get(url)
-    return latitude + ',' + longitude
+    return "location.latitude="+latitude + '&location.longitude=' + longitude
 
 
 def is_viable():
