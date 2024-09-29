@@ -11,8 +11,8 @@ def main():
     return render_template("main.html")
 
 
-@app.route("/validity", methods=['GET', 'POST'])
-def validity():
+@app.route("/viability", methods=['GET', 'POST'])
+def viability():
     """
     primary application
     """

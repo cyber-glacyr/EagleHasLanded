@@ -11,80 +11,125 @@
 </head>
 <body>
 <section id="nav-bar">
-<!--    <nav class="navbar navbar-expand-lg bg-info navbar-fixed-top">-->
-<!--        <div class="container-fluid">-->
-<!--            <div class="navbar-header">-->
-<!--                <a class="navbar-brand text-light" href="/">Solar Energy Viability</a>-->
-<!--            </div>-->
-<!--            <ul class="nav navbar-nav navbar-right">-->
-<!--                <li class="nav-item">-->
-                    <a href="/" class="nav-link text-light">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
-                        </svg>
-                        Home
-                    </a>
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a href="/validity" class="nav-link text-light">-->
-<!--                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">-->
-<!--                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>-->
-<!--                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>-->
-<!--                        </svg>-->
-<!--                        Check Validity-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </nav>-->
-<nav class="navbar bg-info navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand text-light" href="/">
-                <img src="https://image-store-5tn.pages.dev/public/code-for-impact-logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top css-1hqcgph">
-                Solar Energy Viability
-            </a>
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-        aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">
-            </span>
-        </button>
-        <div class="offcanvas offcanvas-end text-bg-info" tabindex="-1" id="offcanvasNavbar"
-        aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">
-                    Links
-                </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                aria-label="Close">
-                </button>
+    <nav class="navbar bg-info navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a id="navbar-left" class="navbar-brand text-light" href="/">
+                    <img src="https://image-store-5tn.pages.dev/public/code-for-impact-logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top css-1hqcgph">
+                    Solar Energy Viability
+                </a>
             </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a href="/" class="nav-link text-light">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
-                            </svg>
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/validity" class="nav-link text-light">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
-                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
-                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
-                            </svg>
-                            Check Validity
-                        </a>
-                    </li>
-                </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                </span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-info" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">
+                        Links
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                    </button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link text-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/viability" class="nav-link text-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+                                </svg>
+                                Check Viability
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+<section id="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="title">Solar Energy Viability</p>
+                <p>Tool to see if your home is viable for solar panels</p>
+                <br>
+                <form action="/viability">
+                    <input type="submit" value="Check your Viability" class="btn btn-info"/>
+                </form>
+                <br>
+                <br>
             </div>
         </div>
     </div>
-</nav>
 </section>
+<section id="why-matter">
+    <div class="container text-center">
+        <h1 class="title text-info">WHY DOES IT MATTER?</h1>
+        <div class="row">
+            <div class="col-md-4 services">
+                <h4 class="text-info">Climate Change</h4>
+                <p class="text-info-emphasis">Solar power produces less life-cycle greenhouse gas emissions than traditional fossil fuel energy. In the United States, more than one third of greenhouse gas emissions come from burning fossil fuels for electricity in buildings and homes. Just a single solar panel can reduce carbon dioxide emissions by more than 100 tons over its lifetime.</p>
+            </div>
+            <div class="col-md-4 services">
+                <h4 class="text-info">Solar Energy</h4>
+                <p class="text-info-emphasis">Solar energy is renewable and carbon-free, so it is used in the fight against climate change. It generates energy by using solar panels, also called PV panels, to capture the Sun’s energy. Solar panels, unlike any other energy source can be used on a home by home basis. This means that its adoption is key to fighting climate change.</p>
+            </div>
+            <div class="col-md-4 services">
+                <h4 class="text-info">Awareness</h4>
+                <p class="text-info-emphasis">Solar energy today is often perceived as a more expensive alternative to fossil fuels in order to help the environment. However, Solar energy can reduce monthly electricity bills and give the ability to store electricity to use later (during an outage for example). Solar energy is a one time flat fee, and having a battery allows you to be unaffected by outages.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="why-us">
+    <div class="container text-center">
+        <h1 class="title text-info">WHY DO WE CARE?</h1>
+        <div class="row">
+            <div class="col-md-6 services">
+                <h4 class="text-info">WHO WE ARE</h4>
+                <p class="text-info-emphasis">We are three high school students from the Houston, TX region with backgrounds in programming and CS. We have participated in several local competitions and are gaining valuable experience as coders and as teammates that we can bring into our future colleges and careers.</p>
+            </div>
+            <div class="col-md-6 services">
+                <h4 class="text-info">OUR STAKE</h4>
+                <p class="text-info-emphasis">Houston, TX is a part of the coastal region of the United States. Over 40% of the U.S. population live in coastal areas and are facing the impact of climate change. In recent years, the Gulf Coast region has been severely impacted by natural disasters that have led to loss of life and damage to infrastructure. Home solar panels offer an avenue for power after natural disasters when the grid is vulnerable or damaged and cuts back on the demand for fossil fuels through other energy sources.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--<section id="why-us">-->
+<!--    <div class="container">-->
+<!--        <h1 class="title text-center text-info">WHY DO WE CARE?</h1>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-6">-->
+<!--            <h4 class="text-info">Where We're From</h4>-->
+<!--            <p class="text-info-emphasis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,-->
+<!--molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum-->
+<!--numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium-->
+<!--optio, eaque rerum! Provident similique accusantium nemo autem.</p>-->
+<!--        </div>-->
+<!--        <div class="col-md-6">-->
+<!--            <h4 class="text-info">Our Stake</h4>-->
+<!--            <p class="text-info-emphasis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,-->
+<!--molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum-->
+<!--numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium-->
+<!--optio, eaque rerum! Provident similique accusantium nemo autem.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 </body>
 </html>

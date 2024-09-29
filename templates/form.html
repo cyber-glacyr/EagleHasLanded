@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <title>Solar Energy Viability (Code for Impact 2024)</title>
     <link rel="stylesheet" href="static/styles/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="http://maps.googleapis.com/maps/api/js?key=APIKEY&libraries=places" type="text/javascript"></script>
-
     <script type="text/javascript">
         function initialize() {
             var input = document.getElementById('searchTextField');
@@ -29,53 +28,112 @@
     </script>
 </head>
 <body>
-<form action="/validity" method="post">
-    <label>Address</label>
-    <br>
-    <input id="searchTextField" placeholder="Address" type="text" autofocus>
-    <input type="hidden" id="name" name="name" />
-    <input type="hidden" id="lat" name="lat" />
-    <input type="hidden" id="lng" name="lng" />
-    <br>
-    <br>
-    <label>Roofing Healthy:</label>
-    <input id="roofing_health" name="roofing_health" type="checkbox" value="healthy">
-    <br>
-    <br>
-    <label>Roofing Type</label>
-    <br>
-    <input type="radio" id="asphalt" name="roofing_type" value="Asphalt Shingles">
-    <label for="asphalt">Asphalt Shingles</label>
-    <br>
-    <input type="radio" id="metal" name="roofing_type" value="Metal">
-    <label for="metal">Metal</label>
-    <br>
-    <input type="radio" id="tile" name="roofing_type" value="Tile">
-    <label for="tile">Tile</label>
-    <br>
-    <input type="radio" id="tar" name="roofing_type" value="Tar and Gravel">
-    <label for="tar">Tar and Gravel</label>
-    <br>
-    <input type="radio" id="composite" name="roofing_type" value="Composite">
-    <label for="composite">Composite</label>
-    <br>
-    <input type="radio" id="rubber" name="roofing_type" value="Rubber">
-    <label for="rubber">Rubber</label>
-    <br>
-    <input type="radio" id="corrugated" name="roofing_type" value="Corrugated">
-    <label for="corrugated">Corrugated</label>
-    <br>
-    <input type="radio" id="slate" name="roofing_type" value="Slate">
-    <label for="slate">Slate</label>
-    <br>
-    <br>
-    <label>Monthly Electricity Cost</label>
-    <br>
-    <label>£</label>
-    <input type="number" id="elec_cost" name="elec_cost" step="any">
-    <br>
-    <br>
-    <button type="submit" value="Submit">Submit</button>
+<section id="nav-bar">
+    <nav class="navbar bg-info navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand text-light" href="/">
+                    <img src="https://image-store-5tn.pages.dev/public/code-for-impact-logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top css-1hqcgph">
+                    Solar Energy Viability
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                </span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-info" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel">
+                        Links
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close">
+                    </button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link text-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/viability" class="nav-link text-light">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+                                </svg>
+                                Check Viability
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</section>
+<h1 class="text-info text-center" id="viability-title">Solar Energy Viability</h1>
+<form id="viability-form" action="/viability" method="post">
+    <div class="mb-3">
+        <label class="form-label">Address</label>
+        <br>
+        <input class="form-control" id="searchTextField" placeholder="Address" type="text" autofocus>
+        <input type="hidden" id="name" name="name" />
+        <input type="hidden" id="lat" name="lat" />
+        <input type="hidden" id="lng" name="lng" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Roofing Healthy:</label>
+        <input class="form-check-input" id="roofing_health" name="roofing_health" type="checkbox" value="healthy">
+    </div>
+    <div class="mb-3">
+        <label>Roofing Type</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="asphalt" name="roofing_type" value="Asphalt Shingles">
+            <label class="form-check-label" for="asphalt">Asphalt Shingles</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="metal" name="roofing_type" value="Metal">
+            <label class="form-check-label" for="metal">Metal</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="tile" name="roofing_type" value="Tile">
+            <label class="form-check-label" for="tile">Tile</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="tar" name="roofing_type" value="Tar and Gravel">
+            <label class="form-check-label" for="tar">Tar and Gravel</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="composite" name="roofing_type" value="Composite">
+            <label class="form-check-label" for="composite">Composite</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="rubber" name="roofing_type" value="Rubber">
+            <label class="form-check-label" for="rubber">Rubber</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="corrugated" name="roofing_type" value="Corrugated">
+            <label class="form-check-label" for="corrugated">Corrugated</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="slate" name="roofing_type" value="Slate">
+            <label class="form-check-label" for="slate">Slate</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label>Monthly Electricity Cost</label>
+        <br>
+        <label>£</label>
+        <input type="number" id="elec_cost" name="elec_cost" step="any">
+    </div>
+    <button class="btn btn-info" type="submit" value="Submit">Submit</button>
 </form>
 </body>
 </html>

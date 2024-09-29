@@ -11,3 +11,71 @@
     width: 30px;
     height: 30px;
 }
+
+#banner {
+    background-image: url("https://assets.ratedpower.com/1694512918-pexels-kelly-l-4320473.jpg?auto=format&dpr=0.24&w=5464");
+    color: white;
+    padding-top: 5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+}
+
+#services {
+    padding: 80px 0;
+}
+
+.services {
+    padding: 5%;
+}
+
+.services h4 {
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+#why-us {
+    background: #dbf2ff;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+#viability-form {
+    padding-top: 75px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    background-color: #48d3fa;
+}
+
+#viability-result {
+    padding-top: 75px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#viability-title {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+@media screen and (min-width: 400px) {
+    #viability-form {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    #viability-result {
+        padding-left: 25%;
+        padding-right: 25%;
+    }
+
+    #navbar-left {
+        padding-left: 5%;
+    }
+}
