@@ -14,7 +14,7 @@ def convert_to_cords(address):
     """
     latitude = ''
     longitude = ''
-    return latitude + ',' + longitude
+    return "location.latitude="+latitude + '&location.longitude=' + longitude
 
 
 def is_viable():
