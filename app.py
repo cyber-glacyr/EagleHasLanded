@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -13,20 +13,6 @@ def main():
     else:
         return render_template('form.html')
 
-
-def convert_to_cords(address):
-    """
-    convert address into latitude / longitude
-    """
-    latitude = ''
-    longitude = ''
-    api = "<<APIKEY>>"
-    url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={api}'
-
-    response = requests.get(url)
-    return "location.latitude="+latitude + '&location.longitude=' + longitude
-
-
 def is_viable():
     """
     - solar, price, and roofing
@@ -37,6 +23,15 @@ def solar_viable(lat, long):
     """
     does the house get enough energy year-long?
     """
+    api = ""
+    url = f'curl -X GET "https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude={lat}&location.longitude={long}&requiredQuality=HIGH&key={api}"'
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        # Printing the JSON response
+        print(response.json())
+    else:
+        print(f"Error: {response.status_code}")
 
 
 def price_viable(currentCost):
