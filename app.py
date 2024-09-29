@@ -1,13 +1,22 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests
 import json
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def main():
-    return render_template('main.html', viability=is_viable())
+    """
+    primary application
+    """
+    if request.method == 'POST':
+        name = request.form['name']
+        latitude = request.form['lat']
+        longitude = request.form['lng']
+        return render_template('result.html', viability=is_viable())
+    else:
+        return render_template('form.html')
 
 def is_viable():
     """
