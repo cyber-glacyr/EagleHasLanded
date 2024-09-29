@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Solar Energy Viability (Code for Impact 2024)</title>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAJbu-OmH7rK4wSLqeQC0Hhj-cgyJUmAqg&libraries=places" type="text/javascript"></script>
+    <link rel="stylesheet" href="static/styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="http://maps.googleapis.com/maps/api/js?key=APIKEY&libraries=places" type="text/javascript"></script>
 
     <script type="text/javascript">
         function initialize() {
@@ -24,13 +29,53 @@
     </script>
 </head>
 <body>
-<form action="/" method="post">
+<form action="/validity" method="post">
     <label>Address</label>
     <br>
-    <input id="searchTextField" placeholder="Address" type="text">
+    <input id="searchTextField" placeholder="Address" type="text" autofocus>
     <input type="hidden" id="name" name="name" />
     <input type="hidden" id="lat" name="lat" />
     <input type="hidden" id="lng" name="lng" />
+    <br>
+    <br>
+    <label>Roofing Healthy:</label>
+    <input id="roofing_health" name="roofing_health" type="checkbox" value="healthy">
+    <br>
+    <br>
+    <label>Roofing Type</label>
+    <br>
+    <input type="radio" id="asphalt" name="roofing_type" value="Asphalt Shingles">
+    <label for="asphalt">Asphalt Shingles</label>
+    <br>
+    <input type="radio" id="metal" name="roofing_type" value="Metal">
+    <label for="metal">Metal</label>
+    <br>
+    <input type="radio" id="tile" name="roofing_type" value="Tile">
+    <label for="tile">Tile</label>
+    <br>
+    <input type="radio" id="tar" name="roofing_type" value="Tar and Gravel">
+    <label for="tar">Tar and Gravel</label>
+    <br>
+    <input type="radio" id="composite" name="roofing_type" value="Composite">
+    <label for="composite">Composite</label>
+    <br>
+    <input type="radio" id="rubber" name="roofing_type" value="Rubber">
+    <label for="rubber">Rubber</label>
+    <br>
+    <input type="radio" id="corrugated" name="roofing_type" value="Corrugated">
+    <label for="corrugated">Corrugated</label>
+    <br>
+    <input type="radio" id="slate" name="roofing_type" value="Slate">
+    <label for="slate">Slate</label>
+    <br>
+    <br>
+    <label>Monthly Electricity Cost</label>
+    <br>
+    <label>£</label>
+    <input type="number" id="elec_cost" name="elec_cost" step="any">
+    <br>
+    <br>
+    <button type="submit" value="Submit">Submit</button>
 </form>
 </body>
 </html>
