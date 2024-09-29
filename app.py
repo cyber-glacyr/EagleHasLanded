@@ -20,14 +20,13 @@ def convert_to_cords(address):
     url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={api}'
 
     response = requests.get(url)
-    if response.status_code == 200:
-        articles = response.json().get('articles', [])
 
-        for index, article in enumerate(articles[:3], start=1):
-            print(f & quot; Article{index}:\n{json.dumps(article, sort_keys=True, indent=4)}\n & quot;)
-            else:
-            print(f & quot;
-            Error: {response.status_code} & quot;)
+    if response.status_code == 200:
+        # Printing the JSON response
+        print(response.json())
+    else:
+        print(f"Error: {response.status_code}")
+
     return "location.latitude="+latitude + '&location.longitude=' + longitude
 
 def is_viable():
