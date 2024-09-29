@@ -1,49 +1,9 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Solar Energy Viability (Code for Impact 2024)</title>-->
-<!--    <script type="text/javascript" >-->
-<!--        let autocomplete;-->
-<!--        function initAutocomplete() {-->
-<!--            autocomplete = new google.maps.place.Autocomplete(document.getElementById('autocomplete'),-->
-<!--                {-->
-<!--                    fields = ['place_id', 'geometry', 'name']-->
-<!--                });-->
-<!--            autocomplete.addListener('place_changed', onPlaceChanged);-->
-<!--        }-->
-
-<!--        function onPlaceChanged() {-->
-<!--            var place = autocomplete.getPlace();-->
-
-<!--            if (!place.geometry) {-->
-<!--                // User did not select a prediction; reset the input field-->
-<!--                document.getElementById('autocomplete').placeholder = 'Address';-->
-<!--            } else {-->
-<!--                // Display details about the valid place-->
-<!--                document.getElementById('details').innerHTML = place.name;-->
-<!--            }-->
-<!--        }-->
-
-<!--        google.maps.event.addDomListener(window, 'load', initAutocomplete);-->
-<!--    </script>-->
-<!--    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJbu-OmH7rK4wSLqeQC0Hhj-cgyJUmAqg&libraries=places&callback=initAutocomplete" async defer></script>-->
-<!--</head>-->
-<!--<body>-->
-<!--<form action="/" method="post">-->
-<!--    <label>Address</label>-->
-<!--    <br>-->
-<!--    <input id="autocomplete" placeholder="Address" type="text">-->
-<!--</form>-->
-<!--</body>-->
-<!--</html>-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Solar Energy Viability (Code for Impact 2024)</title>
-    <script src="http://maps.googleapis.com/maps/api/js?key=<<API_KEY>>&libraries=places" type="text/javascript"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAJbu-OmH7rK4wSLqeQC0Hhj-cgyJUmAqg&libraries=places" type="text/javascript"></script>
 
     <script type="text/javascript">
         function initialize() {
@@ -51,9 +11,9 @@
             var autocomplete = new google.maps.places.Autocomplete(input);
             google.maps.event.addListener(autocomplete, 'place_changed', function () {
                 var place = autocomplete.getPlace();
-                document.getElementById('city2').value = place.name;
-                document.getElementById('cityLat').value = place.geometry.location.lat();
-                document.getElementById('cityLng').value = place.geometry.location.lng();
+                document.getElementById('name').value = place.name;
+                document.getElementById('lat').value = place.geometry.location.lat();
+                document.getElementById('lng').value = place.geometry.location.lng();
                 //alert("This function is working!");
                 //alert(place.name);
                // alert(place.address_components[0].long_name);
@@ -68,9 +28,9 @@
     <label>Address</label>
     <br>
     <input id="searchTextField" placeholder="Address" type="text">
-    <input type="hidden" id="city2" name="city2" />
-    <input type="hidden" id="cityLat" name="cityLat" />
-    <input type="hidden" id="cityLng" name="cityLng" />
+    <input type="hidden" id="name" name="name" />
+    <input type="hidden" id="lat" name="lat" />
+    <input type="hidden" id="lng" name="lng" />
 </form>
 </body>
 </html>
