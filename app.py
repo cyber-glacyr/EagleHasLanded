@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+import requests
+import json
 
 app = Flask(__name__)
 
@@ -14,6 +16,10 @@ def convert_to_cords(address):
     """
     latitude = ''
     longitude = ''
+    api = "<<APIKEY>>"
+    url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={api}'
+
+    response = requests.get(url)
     return latitude + ',' + longitude
 
 
