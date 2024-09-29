@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+import requests
+import json
 
 app = Flask(__name__)
 
@@ -9,7 +11,10 @@ def main():
     primary application
     """
     if request.method == 'POST':
-        return render_template('result.html', viability=is_viable(), api_key=API_KEY)
+        name = request.form['name']
+        latitude = request.form['lat']
+        longitude = request.form['lng']
+        return render_template('result.html', viability=is_viable())
     else:
         return render_template('form.html')
 
