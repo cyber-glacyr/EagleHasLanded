@@ -14,6 +14,10 @@ def convert_to_cords(address):
     """
     latitude = ''
     longitude = ''
+    api = "<<APIKEY>>"
+    url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={api}'
+
+    response = requests.get(url)
     return "location.latitude="+latitude + '&location.longitude=' + longitude
 
 
