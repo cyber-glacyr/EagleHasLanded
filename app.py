@@ -1,11 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def main():
-    return render_template('main.html', viability=is_viable())
+    """
+    primary application
+    """
+    if request.method == 'POST':
+        return render_template('result.html', viability=is_viable(), api_key=API_KEY)
+    else:
+        return render_template('form.html')
 
 
 def convert_to_cords(address):
