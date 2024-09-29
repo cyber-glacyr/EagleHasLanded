@@ -18,7 +18,7 @@ def main():
     else:
         return render_template('form.html')
 
-def is_viable():
+def is_viable(latitude, longitude, roofing_health, roofing_type, energy_price):
     """
     - solar, price, and roofing
     """
@@ -54,6 +54,12 @@ def price_viable(currentCost):
     does the cost of solar outweigh the current cost of bills?
     """
     solarCost = 20000
+
+
+def roofing_viable(roofing_health, roofing_type):
+    """
+    Is the roofing suitable
+    """
 
 
 def test():
