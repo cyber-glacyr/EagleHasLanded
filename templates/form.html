@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Solar Energy Viability (Code for Impact 2024)</title>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAJbu-OmH7rK4wSLqeQC0Hhj-cgyJUmAqg&libraries=places" type="text/javascript"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=APIKEY&libraries=places" type="text/javascript"></script>
 
     <script type="text/javascript">
         function initialize() {
@@ -27,14 +27,14 @@
 <form action="/" method="post">
     <label>Address</label>
     <br>
-    <input id="searchTextField" placeholder="Address" type="text">
+    <input id="searchTextField" placeholder="Address" type="text" autofocus>
     <input type="hidden" id="name" name="name" />
     <input type="hidden" id="lat" name="lat" />
     <input type="hidden" id="lng" name="lng" />
     <br>
     <br>
     <label>Roofing Healthy:</label>
-    <input id="roofing_health" type="checkbox">
+    <input id="roofing_health" name="roofing_health" type="checkbox" value="healthy">
     <br>
     <br>
     <label>Roofing Type</label>
@@ -51,11 +51,26 @@
     <input type="radio" id="tar" name="roofing_type" value="Tar and Gravel">
     <label for="tar">Tar and Gravel</label>
     <br>
+    <input type="radio" id="composite" name="roofing_type" value="Composite">
+    <label for="composite">Composite</label>
+    <br>
+    <input type="radio" id="rubber" name="roofing_type" value="Rubber">
+    <label for="rubber">Rubber</label>
+    <br>
+    <input type="radio" id="corrugated" name="roofing_type" value="Corrugated">
+    <label for="corrugated">Corrugated</label>
+    <br>
+    <input type="radio" id="slate" name="roofing_type" value="Slate">
+    <label for="slate">Slate</label>
+    <br>
     <br>
     <label>Monthly Electricity Cost</label>
     <br>
-    <label>$</label>
-    <input type="number" id="elec_cost" step="0.01">
+    <label>£</label>
+    <input type="number" id="elec_cost" name="elec_cost" step="any">
+    <br>
+    <br>
+    <button type="submit" value="Submit">Submit</button>
 </form>
 </body>
 </html>
