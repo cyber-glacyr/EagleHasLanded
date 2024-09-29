@@ -28,15 +28,22 @@ def solar_viable(lat, long):
     """
     does the house get enough energy year-long?
     """
-    api = ""
+    api = "AIzaSyAJbu-OmH7rK4wSLqeQC0Hhj-cgyJUmAqg"
     url = f"https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude={lat}&location.longitude={long}&requiredQuality=HIGH&key={api}"
     response = requests.get(url)
 
     if response.status_code == 200:
         # Printing the JSON response
         js = response.json()
-        final = json.loads(js)
-        print(final['maxSunshineHoursPerYear'])
+        final = json.dumps(js)
+        json_object = json.dumps(final, indent=4)
+        print(json_object)
+        with open("sample.json", "w") as outfile:
+            outfile.write(json_object)
+
+        with open("sample.json", mode="r", encoding="utf-8") as read_file:
+            solarHours = json.load(read_file)
+        print(solarHours["solarPotential"]["maxSunshineHoursPerYear"])
     else:
         print(f"Error: {response.status_code}")
 
