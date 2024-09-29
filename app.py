@@ -28,7 +28,7 @@ def solar_viable(lat, long):
     """
     does the house get enough energy year-long?
     """
-    api = "AIzaSyAJbu-OmH7rK4wSLqeQC0Hhj-cgyJUmAqg"
+    api = ""
     url = f"https://solar.googleapis.com/v1/buildingInsights:findClosest?location.latitude={lat}&location.longitude={long}&requiredQuality=HIGH&key={api}"
     response = requests.get(url)
 
