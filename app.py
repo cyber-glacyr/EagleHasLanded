@@ -5,8 +5,13 @@ import json
 app = Flask(__name__)
 
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
 def main():
+    return render_template("main.html")
+
+
+@app.route("/validity", methods=['GET', 'POST'])
+def validity():
     """
     primary application
     """
